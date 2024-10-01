@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     margin: 0;
     font-family: 'Lato', sans-serif; /* Changed font family to Lato */
     background-color: #34495e; /* Darker background color */
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 #sn{
@@ -28,8 +24,9 @@ body {
 }
 
 .flashcard-container {
+    overflow: hidden;
     width: 100%;
-    height: 70%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,24 +127,44 @@ button:active {
     transform: scale(0.95);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
     .flashcard {
         width: 90%; /* Adjusted for smaller screens */
-        height: 300px; /* Allow height to adjust based on content */
+        height: 260px; /* Allow height to adjust based on content */
     }
 
     #sn{
         width: 40px;
         height: auto;
         font-size: 25px;
-        top: 18%;
-        left: 385px;
+        top: 13%;
+        left: 84%;
+    }
+
+    .flashcard-container{
+        justify-content: start;
+        padding-top: 35%;
     }
 
     .flashcard .back{
         font-size: 21px;
+        text-align: left;
+        padding: 20px 15px;
+        font-size: 18px;
     }
+
     .flashcard .front {
         font-size: 30px;
+    }
+
+    .controls{
+        margin-top: 80px;
+    }
+
+    button {
+        padding: 15px 20px;
+        margin: 0 10px;
+        font-size: 19px;
+        width: 140px;
     }
 }
