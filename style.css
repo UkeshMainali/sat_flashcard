@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Lato', sans-serif; /* Changed font family to Lato */
+    background-color: #34495e; /* Darker background color */
+    overflow: hidden;
+}
+
+#sn{
+    width: 60px;
+    height: 36px;
+    font-size: 30px;
+    font-weight: 900;
+    position: absolute;
+    z-index: 5;
+    top: 13%;
+    left: 72%;
+    background-color: #ff4d00;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.flashcard-container {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flashcard {
+    width: 50%; /* Increased size to 200% */
+    height: 400px; /* Increased size to 200% */
+    background-color: #ffffff; /* Changed to white for contrast */
+    border-radius: 20px; /* Increased border radius */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 0.5s ease-in-out; /* Smoother transitions */
+    cursor: pointer;
+}
+
+.flashcard:hover {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+}
+
+.flashcard .front, .flashcard .back {
+    border: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px; /* Increased padding */
+    box-sizing: border-box;
+    outline: none;
+}
+
+.flashcard .back{
+    align-items: start;
+    font-size: 26px;
+}
+
+.ext{
+    font-weight: bold;
+    color: violet;
+    margin-right: 10px;
+}
+
+.flashcard .front {
+    background-color: #004574; /* Changed front color */
+    color: #ffffff; /* Font color for the front */
+    border-radius: 20px; /* Increased border radius */
+}
+
+.flashcard .back {
+    background-color: #112b1c; /* Changed back color */
+    color: #ffffff; /* Font color for the back */
+    transform: rotateY(180deg);
+    border-radius: 20px; /* Increased border radius */
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.controls {
+    margin-top: 40px; /* Increased margin */
+}
+
+button {
+    padding: 20px 40px;
+    background-color: #de0fbe;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 34px;
+    margin: 0 20px;
+    transition: background-color 0.4s ease, transform 0.2s ease;
+    font-size: 1.2em;
+    width: 160px;
+  }
+
+button:hover {
+    background-color: #dd00ff; /* Darker shade on hover */
+    box-shadow: -2px 2px 8px #9f07b4;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 2px 2px 1px #460050;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .flashcard {
+        width: 90%; /* Adjusted for smaller screens */
+        height: 300px; /* Allow height to adjust based on content */
+    }
+
+    #sn{
+        width: 40px;
+        height: auto;
+        font-size: 25px;
+        top: 18%;
+        left: 385px;
+    }
+
+    .flashcard .back{
+        font-size: 21px;
+    }
+    .flashcard .front {
+        font-size: 30px;
+    }
+}
