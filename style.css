@@ -27,8 +27,8 @@ body {
 
 .heading{
     text-shadow: 2px 2px 2px whitesmoke;
-    left: 51%;
-    transform: translateX(-51%);
+    left: 50%;
+    transform: translateX(-50%);
     top: 12%;
 }
 
