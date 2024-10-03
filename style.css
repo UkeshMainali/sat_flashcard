@@ -148,7 +148,7 @@ button:focus {
 }
 
 .flashcard .front {
-    background-color: #004574;
+    background-color: #187bbf;
     /* Changed front color */
     color: #ffffff;
     /* Font color for the front */
@@ -157,7 +157,7 @@ button:focus {
 }
 
 .flashcard .back {
-    background-color: #112b1c;
+    background-color: #155430;
     /* Changed back color */
     color: #ffffff;
     /* Font color for the back */
