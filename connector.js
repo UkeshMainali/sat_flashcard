@@ -381,7 +381,7 @@ function updateCard() {
     // Determine the state of the flashcard based on isFlippedMode
     if (isFlippedMode) {
         flashcard.classList.add('flipped'); // Show back side
-        flipButton.innerText = "Guess the meaning"; // Change button text to "Flipped"
+        flipButton.innerText = "Guess the word"; // Change button text to "Flipped"
     } else {
         flashcard.classList.remove('flipped'); // Show front side
         flipButton.innerText = "Guess from meaning"; // Reset button text
