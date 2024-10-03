@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="index.html"><img src="home-icon.png" alt="Home Page" id="home"></a>
+    <div class="flashcard-container">
+        <button id="flipMe">Guess from meaning</button>
+        <div class="flashcard flipped" id="flashcard">
+            <span id="sn">1</span>
+            <div class="front">
+                <p id="word">Adhere</p>
+            </div>
+            <div class="back">
+                <p><span class="ext">Meaning: </span><span id="definition">To believe in and follow the practices of.
+                    </span></p>
+
+                <p><span class="ext">Example: </span> <span id="examples">He adhered to the rules strictly.</span></p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="previous">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
