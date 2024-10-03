@@ -61,37 +61,58 @@ const flashcards = [
     { word: "Viable", definition: "capable of working successfully", example: "They developed a viable plan for the project." }
 ];
 
-
-
 let currentCard = 0;
-
-function flipCard() {
-    document.querySelector('.flashcard').classList.toggle('flipped');
-}
+let isFlippedMode = false; // Track if flipped mode is active
+const flashcard = document.getElementById('flashcard');
+const flipButton = document.getElementById('flipMe');
 
 function updateCard() {
     const wordElement = document.getElementById('word');
     const definitionElement = document.getElementById('definition');
-    const exampleElement = document.getElementById('examples'); // Add example element reference
+    const exampleElement = document.getElementById('examples');
     const sn = document.getElementById('sn');
-    
+    const flashcard = document.getElementById('flashcard');
+
     // Update the content with the current card information
     wordElement.textContent = flashcards[currentCard].word;
     definitionElement.textContent = flashcards[currentCard].definition;
-    exampleElement.textContent = flashcards[currentCard].example; // Update example
-    document.querySelector('.flashcard').classList.remove('flipped');
+    exampleElement.textContent = flashcards[currentCard].example;
     sn.innerText = currentCard + 1;
+
+    // Determine the state of the flashcard based on isFlippedMode
+    if (isFlippedMode) {
+        flashcard.classList.add('flipped'); // Show back side
+        flipButton.innerText = "Guess the meaning"; // Change button text to "Flipped"
+    } else {
+        flashcard.classList.remove('flipped'); // Show front side
+        flipButton.innerText = "Guess from meaning"; // Reset button text
+    }
 }
 
 function nextCard() {
-    currentCard = (currentCard + 1) % flashcards.length;
+    currentCard = (currentCard + 1) % flashcards.length; // Move to next card
     updateCard();
 }
 
 function prevCard() {
-    currentCard = (currentCard - 1 + flashcards.length) % flashcards.length;
+    currentCard = (currentCard - 1 + flashcards.length) % flashcards.length; // Move to previous card
     updateCard();
 }
 
-// Initialize first card
+// Initialize the first card
 updateCard();
+
+flashcard.addEventListener('click', () => {
+    flashcard.classList.toggle("flipped");
+});
+
+
+// Event listener for flipping the card
+flipButton.addEventListener('click', () => {
+    isFlippedMode = !isFlippedMode; // Toggle flipped mode
+    updateCard(); // Update the card to reflect the new mode
+});
+
+// Add event listeners for next and previous buttons
+document.getElementById('next').addEventListener('click', nextCard);
+document.getElementById('previous').addEventListener('click', prevCard);
