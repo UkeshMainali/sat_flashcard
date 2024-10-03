@@ -207,3 +207,23 @@ button:active {
         width: 140px;
     }
 }
+
+        @media (max-width: 445px) {
+            .flashcard-container {
+                display: block;
+                text-align: center;
+                padding: 0;
+            }
+
+            .flashcard {
+                margin: 150px auto 0px auto;
+            }
+
+            #flipMe {
+                position: relative;
+            }
+
+            .controls {
+                margin-top: 100px;
+            }
+        }
