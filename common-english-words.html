@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="index.html"><img src="home-icon.png" alt="Home Page" id="home"></a>
+    <div class="flashcard-container">
+        <button id="flipMe">Guess from meaning</button>
+        <div class="flashcard flipped" id="flashcard">
+            <span id="sn">1</span>
+            <div class="front">
+                <p id="word">Abstract</p>
+            </div>
+            <div class="back">
+                <p><span class="ext" id="back_side_word">Abstract</span><span class="ext" id="nepali">पालन गर्नु</span></p>
+                <p><span class="ext">Meaning: </span><span id="definition">an idea that exists only in the mind and is not tangible
+                    </span></p>
+                    
+                <p><span class="ext">Example: </span> <span id="examples">Happiness is an abstract concept that everyone experiences differently.</span></p>
+
+            </div>
+        </div>
+        <div class="controls">
+            <button id="previous">Previous</button>
+            <button id="next">Next</button>
+        </div>
+    </div>
+    <script src="common-english-word-meanings.js"></script>
+</body>
+
+</html>
