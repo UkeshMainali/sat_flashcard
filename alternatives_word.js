@@ -1159,10 +1159,10 @@ let isFlippedMode = false; // Track if flipped mode is active
 const flashcard = document.getElementById('flashcard');
 const flipButton = document.getElementById('flipMe');
 
-function arrayToString(arr) {
+function arrayToString(arr, seperator) {
     let words = arr[0];
     for (let i = 1; i < arr.length; i++) {
-        words = words + " | " + arr[i];
+        words = words + seperator + arr[i];
     }
     return words;
 }
@@ -1184,7 +1184,18 @@ function updateCard() {
         back_side_word.style.display = "inline-block";
         back_side_word.textContent = flashcards[currentCard].common;
     }
-    wordElement.textContent = arrayToString(flashcards[currentCard].alternatives);
+
+    // Get the computed style for the flashcard element
+    const computedStyle = window.getComputedStyle(flashcard);
+    const flashcardWidth = parseInt(computedStyle.width); // Get the width in pixels
+
+    if (flashcardWidth >= 768) {
+        wordElement.innerHTML = arrayToString(flashcards[currentCard].alternatives, " | ");
+    } else {
+        wordElement.innerHTML = arrayToString(flashcards[currentCard].alternatives, "<br>");
+    }
+
+
     definitionElement.textContent = flashcards[currentCard].meaning;
     exampleElement.textContent = flashcards[currentCard].example;
     sn.innerText = currentCard + 1;
